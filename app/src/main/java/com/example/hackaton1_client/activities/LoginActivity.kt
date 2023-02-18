@@ -1,5 +1,6 @@
 package com.example.hackaton1_client.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
@@ -11,6 +12,12 @@ class LoginActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        //Здесь входим в аккаунт
+        //Пока просто проверяем связь с сервером
+
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
 
 
     }

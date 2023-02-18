@@ -61,7 +61,7 @@
         app:layout_constraintRight_toRightOf="parent"
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="58dp"
 
         android:background="@drawable/bottom_menu"
 
@@ -78,12 +78,27 @@
         android:layout_width="28dp"
         android:layout_height="28dp"
 
+        android:layout_marginBottom="13dp"
 
 
         android:background="@drawable/objects_choice_off"
 
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintRight_toRightOf="@+id/objects_choice"
+        app:layout_constraintLeft_toLeftOf="@id/objects_choice"
+        app:layout_constraintTop_toBottomOf="@+id/objects_choice"
+
+        android:fontFamily="@font/days_one_regular_family"
+        android:textColor="@color/inactiveWhite"
+        android:text="@string/objects_choice"
+        android:textSize="11sp"
+
+        />
 
 
 
@@ -98,7 +113,24 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
 
+        android:layout_marginBottom="13dp"
+
         android:background="@drawable/payment_choice_off"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintRight_toRightOf="@+id/payment_choice"
+        app:layout_constraintLeft_toLeftOf="@id/payment_choice"
+        app:layout_constraintTop_toBottomOf="@+id/payment_choice"
+
+        android:fontFamily="@font/days_one_regular_family"
+        android:textColor="@color/inactiveWhite"
+        android:text="@string/payment_choice"
+        android:textSize="11sp"
 
         />
 
@@ -113,9 +145,39 @@
         android:layout_width="28dp"
         android:layout_height="28dp"
 
+        android:layout_marginBottom="13dp"
+
         android:background="@drawable/profile_choice_off"
 
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintRight_toRightOf="@+id/profile_choice"
+        app:layout_constraintLeft_toLeftOf="@id/profile_choice"
+        app:layout_constraintTop_toBottomOf="@+id/profile_choice"
+
+        android:fontFamily="@font/days_one_regular_family"
+        android:textColor="@color/inactiveWhite"
+        android:text="@string/profile_choice"
+        android:textSize="11sp"
+
+        />
+
+    <androidx.fragment.app.FragmentContainerView
+
+        android:id="@+id/main_fragment"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        android:layout_marginTop="102dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

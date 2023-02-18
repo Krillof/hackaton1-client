@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">KUBANOID</string>
     <string name="entering">Вход</string>
+    <string name="objects_choice">Объекты</string>
+    <string name="payment_choice">Оплата счетов</string>
+    <string name="profile_choice">Профиль</string>
 
 </resources>
