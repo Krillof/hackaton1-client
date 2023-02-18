@@ -1,6 +1,7 @@
 package com.example.hackaton1_client.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,6 +38,7 @@ class BuildingsFragment : Fragment() {
         if (view is RecyclerView) {
 
             NetworkQueries.getBuildings { buildings ->
+                Log.println(Log.DEBUG, "got buildings", "")
                 with(view) {
                     layoutManager = when {
                         columnCount <= 1 -> LinearLayoutManager(context)
@@ -44,6 +46,7 @@ class BuildingsFragment : Fragment() {
                     }
                     adapter = BuildingsRecyclerViewAdapter(buildings)
                 }
+
             }
 
 

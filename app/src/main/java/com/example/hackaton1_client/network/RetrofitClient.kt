@@ -14,7 +14,7 @@ import java.net.URL
 import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
-    private const val BASE_URL = ""
+    private const val BASE_URL = "http://10.2.0.34:8080"
 
     val okHttpClient: OkHttpClient = OkHttpClient.Builder()
         .readTimeout(60, TimeUnit.SECONDS)
@@ -22,7 +22,7 @@ object RetrofitClient {
         .build()
     private var mRetrofit: Retrofit
             = Retrofit.Builder()
-        .baseUrl(BASE_URL + "api/")
+        .baseUrl(BASE_URL)
         .addConverterFactory(ScalarsConverterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttpClient)
@@ -57,7 +57,8 @@ object RetrofitClient {
 
 
     fun setPictureByURL(URL: String?, view: ImageView) {
-        DownloadImageTask(view).execute(URL)
+        Log.println(Log.DEBUG, "getting picture", BASE_URL+'/'+URL)
+        DownloadImageTask(view).execute(BASE_URL + '/'+ URL)
     }
 
 }

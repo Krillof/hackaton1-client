@@ -8,8 +8,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="333dp"
+        android:layout_height="136dp"
         android:id="@+id/card_view_for_image"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -153,5 +153,11 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_expenses_parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

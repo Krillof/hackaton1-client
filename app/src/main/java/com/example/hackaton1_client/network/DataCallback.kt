@@ -1,5 +1,4 @@
 package com.example.hackaton1_client.network
-import android.annotation.SuppressLint
 import android.util.Log
 import retrofit2.Call
 import retrofit2.Callback
@@ -12,7 +11,7 @@ class DataCallback<T>(val awaiter: (T)->Unit) : Callback<T> {
             awaiter(response.body()!!)
         } else {
             Log.println(Log.ERROR, "DataCallback Err", "Response wasn't succesfull: "
-                    + response.message() + " " + response.code())
+                    + response.message() + " " + response.code() + " " + call.request().url)
         }
     }
 

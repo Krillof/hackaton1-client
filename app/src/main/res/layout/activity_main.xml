@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.MainActivity"
+    android:background="@color/white"
+    >
 
     <ImageView
         android:layout_width="wrap_content"
@@ -52,20 +54,33 @@
 
         />
 
-
-    <ImageView
-        android:id="@+id/bottom_menu"
-
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/bottom_menu"
+        app:cardElevation="20dp"
+        >
+        <ImageView
 
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
 
-        android:background="@drawable/bottom_menu"
 
-        />
+
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+
+
+
+            android:background="@drawable/bottom_menu"
+
+            />
+    </androidx.cardview.widget.CardView>
+
+
+
+
 
     <View
         android:id="@+id/objects_choice"
@@ -80,12 +95,15 @@
 
         android:layout_marginBottom="13dp"
 
+        android:translationZ="21dp"
 
         android:background="@drawable/objects_choice_off"
 
         />
 
     <TextView
+        android:id="@+id/objects_choice_text_view"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -98,9 +116,28 @@
         android:text="@string/objects_choice"
         android:textSize="11sp"
 
+
+        android:translationZ="21dp"
         />
 
+    <View
+        android:id="@+id/objects_choice_click_area"
 
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="-5dp"
+
+        android:translationZ="22dp"
+
+        android:clickable="true"
+        android:focusable="true"
+
+        app:layout_constraintTop_toTopOf="@+id/objects_choice"
+        app:layout_constraintStart_toStartOf="@id/objects_choice"
+
+        />
 
     <View
         android:id="@+id/payment_choice"
@@ -115,11 +152,15 @@
 
         android:layout_marginBottom="13dp"
 
+        android:translationZ="21dp"
+
         android:background="@drawable/payment_choice_off"
 
         />
 
     <TextView
+        android:id="@+id/payment_choice_text_view"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -132,7 +173,27 @@
         android:text="@string/payment_choice"
         android:textSize="11sp"
 
+        android:translationZ="21dp"
         />
+
+    <View
+        android:id="@+id/payment_choice_click_area"
+
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="-5dp"
+
+        android:translationZ="22dp"
+
+        android:clickable="true"
+        android:focusable="true"
+
+        app:layout_constraintTop_toTopOf="@+id/payment_choice"
+        app:layout_constraintStart_toStartOf="@id/payment_choice"
+
+         />
 
     <View
         android:id="@+id/profile_choice"
@@ -149,9 +210,14 @@
 
         android:background="@drawable/profile_choice_off"
 
+        android:translationZ="21dp"
+
+
         />
 
     <TextView
+        android:id="@+id/profile_choice_text_view"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -164,7 +230,29 @@
         android:text="@string/profile_choice"
         android:textSize="11sp"
 
+        android:translationZ="21dp"
+
         />
+
+    <View
+        android:id="@+id/profile_choice_click_area"
+
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="-5dp"
+
+        android:translationZ="22dp"
+
+        android:clickable="true"
+        android:focusable="true"
+
+        app:layout_constraintTop_toTopOf="@+id/profile_choice"
+        app:layout_constraintStart_toStartOf="@id/profile_choice"
+
+        />
+
 
     <androidx.fragment.app.FragmentContainerView
 
@@ -172,10 +260,11 @@
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
 
         android:layout_marginTop="102dp"
 
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         />

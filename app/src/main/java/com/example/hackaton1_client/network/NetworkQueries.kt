@@ -6,10 +6,8 @@ import com.example.hackaton1_client.data.CommercialObject
 
 object NetworkQueries {
 
-    val BASEphotoURL: String = "http://10.2.0.34:8080/"
-
     fun setBuildingPicture(building: Building, imageView: ImageView){
-        RetrofitClient.setPictureByURL(BASEphotoURL + building.photo_build, imageView)
+        RetrofitClient.setPictureByURL(building.photo_build, imageView)
     }
 
 

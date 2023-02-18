@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface CubanoidsAPI {
-    @GET("/get_buildings")
+    @GET("/get_buildings/{id}/")
     fun getAllBuildings(
         @Path("id") id: Int
     ) : Call<List<Building>>
