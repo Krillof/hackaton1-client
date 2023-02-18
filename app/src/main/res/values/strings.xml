@@ -4,5 +4,7 @@
     <string name="objects_choice">Объекты</string>
     <string name="payment_choice">Оплата счетов</string>
     <string name="profile_choice">Профиль</string>
+    <string name="view_expenses">Смотреть расходы</string>
 
+    <string name="filler">Текст</string>
 </resources>

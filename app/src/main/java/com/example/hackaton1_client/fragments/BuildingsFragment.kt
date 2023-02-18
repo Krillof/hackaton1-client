@@ -9,13 +9,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.hackaton1_client.R
-import com.example.hackaton1_client.fragments.placeholder.PlaceholderContent
 import com.example.hackaton1_client.network.NetworkQueries
 
 /**
  * A fragment representing a list of Items.
  */
-class CommercialObjectsFragment : Fragment() {
+class BuildingsFragment : Fragment() {
 
     private var columnCount = 1
 
@@ -31,19 +30,19 @@ class CommercialObjectsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_commercial_objects_list,
+        val view = inflater.inflate(R.layout.fragment_buildings_list,
             container, false)
 
         // Set the adapter
         if (view is RecyclerView) {
 
-            NetworkQueries.getCommercialObjects { commercialObjects ->
+            NetworkQueries.getBuildings { buildings ->
                 with(view) {
                     layoutManager = when {
                         columnCount <= 1 -> LinearLayoutManager(context)
                         else -> GridLayoutManager(context, columnCount)
                     }
-                    adapter = CommercialObjectsRecyclerViewAdapter(commercialObjects)
+                    adapter = BuildingsRecyclerViewAdapter(buildings)
                 }
             }
 
@@ -60,7 +59,7 @@ class CommercialObjectsFragment : Fragment() {
         // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
-            CommercialObjectsFragment().apply {
+            BuildingsFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_COLUMN_COUNT, columnCount)
                 }

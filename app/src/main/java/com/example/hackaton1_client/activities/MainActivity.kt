@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.hackaton1_client.R
-import com.example.hackaton1_client.fragments.CommercialObjectsFragment
+import com.example.hackaton1_client.fragments.BuildingsFragment
 
 class MainActivity : AppCompatActivity() {
     enum class Choices {
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun makeChoice(choice: Choices){
         setMainFragment(when (choice){
-            Choices.OBJECTS ->CommercialObjectsFragment()
+            Choices.OBJECTS ->BuildingsFragment()
             Choices.PAYMENTS -> null
             Choices.PROFILE -> null
             else -> throw Exception("No such choice")

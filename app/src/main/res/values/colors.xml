@@ -6,4 +6,7 @@
     <color name="lightBlue">#2A81D2</color>
     <color name="white">#FFFFFFFF</color>
     <color name="inactiveWhite">#A4A4A4</color>
+    <color name="comObjectsHeader">#353535</color>
+    <color name="comObjectsSubHeader">#5F5C5C</color>
+    <color name="comObjectsAddressHeader">#A5A4A4</color>
 </resources>
