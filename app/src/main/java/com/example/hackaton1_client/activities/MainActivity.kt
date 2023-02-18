@@ -2,10 +2,11 @@ package com.example.hackaton1_client.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.hackaton1_client.R
-import com.example.hackaton1_client.fragments.ObjectsFragment
+import com.example.hackaton1_client.fragments.CommercialObjectsFragment
 
 class MainActivity : AppCompatActivity() {
     enum class Choices {
@@ -15,28 +16,22 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun setMainFragment(newFragment: Fragment){
-        supportFragmentManager.commit{
-            add(R.id.main_fragment, newFragment)
-        }
+    private fun setMainFragment(newFragment: Fragment?){
+        if (newFragment == null) Toast.makeText(this, "Не готово)", Toast.LENGTH_SHORT).show()
+        else
+            supportFragmentManager.commit{
+                add(R.id.main_fragment, newFragment)
+            }
     }
 
 
     private fun makeChoice(choice: Choices){
-        when (choice){
-            Choices.OBJECTS -> {
-                setMainFragment(ObjectsFragment())
-            }
-            Choices.PAYMENTS ->{
-                //setMainFragment(PaymentsFragment())
-            }
-            Choices.PROFILE ->{
-                //setMainFragment(ProfileFragment())
-            }
-            else -> {
-                throw Exception("No such choice")
-            }
-        }
+        setMainFragment(when (choice){
+            Choices.OBJECTS ->CommercialObjectsFragment()
+            Choices.PAYMENTS -> null
+            Choices.PROFILE -> null
+            else -> throw Exception("No such choice")
+        })
     }
 
 
@@ -45,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         makeChoice(Choices.OBJECTS)
-
 
     }
 }
