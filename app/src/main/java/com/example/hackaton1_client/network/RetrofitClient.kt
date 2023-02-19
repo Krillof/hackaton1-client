@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory
 import android.os.AsyncTask
 import android.util.Log
 import android.widget.ImageView
+import com.google.android.material.imageview.ShapeableImageView
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -32,7 +33,7 @@ object RetrofitClient {
         return mRetrofit.create(CubanoidsAPI::class.java)
     }
 
-    private class DownloadImageTask(var bmImage: ImageView) :
+    private class DownloadImageTask(var bmImage: ShapeableImageView) :
         AsyncTask<String?, Void?, Bitmap?>() {
 
         override fun onPostExecute(result: Bitmap?) {
@@ -56,7 +57,7 @@ object RetrofitClient {
 
 
 
-    fun setPictureByURL(URL: String?, view: ImageView) {
+    fun setPictureByURL(URL: String?, view: ShapeableImageView) {
         Log.println(Log.DEBUG, "getting picture", BASE_URL+'/'+URL)
         DownloadImageTask(view).execute(BASE_URL + '/'+ URL)
     }

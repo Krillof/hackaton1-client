@@ -20,11 +20,15 @@ class MainActivity : AppCompatActivity() {
         PROFILE
     }
 
+    private var currentFragment: Fragment? = null
+
     private fun setMainFragment(newFragment: Fragment?){
         if (newFragment == null) Toast.makeText(this, "Не готово)", Toast.LENGTH_SHORT).show()
         else
             supportFragmentManager.commit{
+                if (currentFragment != null) remove(currentFragment!!)
                 add(R.id.main_fragment, newFragment)
+                currentFragment = newFragment
             }
     }
 

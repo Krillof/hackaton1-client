@@ -3,10 +3,11 @@ package com.example.hackaton1_client.network
 import android.widget.ImageView
 import com.example.hackaton1_client.data.Building
 import com.example.hackaton1_client.data.CommercialObject
+import com.google.android.material.imageview.ShapeableImageView
 
 object NetworkQueries {
 
-    fun setBuildingPicture(building: Building, imageView: ImageView){
+    fun setBuildingPicture(building: Building, imageView: ShapeableImageView){
         RetrofitClient.setPictureByURL(building.photo_build, imageView)
     }
 
@@ -22,7 +23,7 @@ object NetworkQueries {
         )
     }
 
-    fun getFreeCommercialObjects(building: Int, awaiter:(List<CommercialObject>)->Unit){
+    fun getCommercialObjects(building: Int, awaiter:(List<CommercialObject>)->Unit){
 
     }
 }
