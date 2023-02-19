@@ -13,6 +13,7 @@ import com.example.hackaton1_client.R
 import com.example.hackaton1_client.fragments.BuildingsFragment
 import com.example.hackaton1_client.fragments.CommercialObjectRecyclerViewAdapter
 import com.example.hackaton1_client.fragments.CommercialObjectsFragment
+import com.example.hackaton1_client.fragments.PaymentFragment
 
 class MainActivity : AppCompatActivity() {
     enum class Choices {
@@ -44,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         setMainFragment(
             when (choice) {
                 Choices.OBJECTS -> BuildingsFragment{goToComObjects(it)}
-                Choices.PAYMENTS -> null
+                Choices.PAYMENTS -> PaymentFragment()
                 Choices.PROFILE -> null
                 else -> throw Exception("No such choice")
             }
