@@ -10,10 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.hackaton1_client.R
-import com.example.hackaton1_client.fragments.BuildingsFragment
-import com.example.hackaton1_client.fragments.CommercialObjectRecyclerViewAdapter
-import com.example.hackaton1_client.fragments.CommercialObjectsFragment
-import com.example.hackaton1_client.fragments.PaymentFragment
+import com.example.hackaton1_client.fragments.*
 
 class MainActivity : AppCompatActivity() {
     enum class Choices {
@@ -46,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             when (choice) {
                 Choices.OBJECTS -> BuildingsFragment{goToComObjects(it)}
                 Choices.PAYMENTS -> PaymentFragment()
-                Choices.PROFILE -> null
+                Choices.PROFILE -> ProfileFragment()
                 else -> throw Exception("No such choice")
             }
         )
