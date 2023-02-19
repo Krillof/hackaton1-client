@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.hackaton1_client.data.Building
 import com.example.hackaton1_client.databinding.FragmentBuildingBinding
-import com.example.hackaton1_client.fragments.placeholder.PlaceholderContent.PlaceholderItem
+import com.example.hackaton1_client.network.placeholder.PlaceholderContent.PlaceholderItem
 import com.example.hackaton1_client.network.NetworkQueries
 
 /**

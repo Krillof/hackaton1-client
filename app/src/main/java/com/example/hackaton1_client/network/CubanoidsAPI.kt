@@ -12,8 +12,8 @@ interface CubanoidsAPI {
         @Path("id") id: Int
     ) : Call<List<Building>>
 
-    @GET("/get_comobjects")
-    fun getAllCommercialObjects(
-
+    @GET("/get_commercial_objects/{id}/")
+    fun getCommercialObjects(
+        @Path("id") id: Int
     ): Call<List<CommercialObject>>
 }

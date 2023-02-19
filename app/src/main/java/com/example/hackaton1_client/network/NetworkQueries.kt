@@ -1,6 +1,5 @@
 package com.example.hackaton1_client.network
 
-import android.widget.ImageView
 import com.example.hackaton1_client.data.Building
 import com.example.hackaton1_client.data.CommercialObject
 import com.google.android.material.imageview.ShapeableImageView
@@ -24,6 +23,10 @@ object NetworkQueries {
     }
 
     fun getCommercialObjects(building: Int, awaiter:(List<CommercialObject>)->Unit){
-
+        RetrofitClient.getAPI().getCommercialObjects(building).enqueue(
+            DataCallback<List<CommercialObject>>{
+                awaiter(it)
+            }
+        )
     }
 }
