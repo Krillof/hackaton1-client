@@ -1,17 +1,18 @@
 package com.example.hackaton1_client.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.hackaton1_client.R
 import com.example.hackaton1_client.fragments.BuildingsFragment
+import com.example.hackaton1_client.fragments.CommercialObjectRecyclerViewAdapter
+import com.example.hackaton1_client.fragments.CommercialObjectsFragment
 
 class MainActivity : AppCompatActivity() {
     enum class Choices {
@@ -32,11 +33,17 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
+    private fun goToComObjects(building_id: Int){
+        val intent = Intent(this, CommercialObjectsListActivity::class.java)
+        intent.putExtra(CommercialObjectsListActivity.BUILDING_ID, building_id)
+        startActivity(intent)
+    }
+
 
     private fun makeChoice(choice: Choices) {
         setMainFragment(
             when (choice) {
-                Choices.OBJECTS -> BuildingsFragment()
+                Choices.OBJECTS -> BuildingsFragment{goToComObjects(it)}
                 Choices.PAYMENTS -> null
                 Choices.PROFILE -> null
                 else -> throw Exception("No such choice")

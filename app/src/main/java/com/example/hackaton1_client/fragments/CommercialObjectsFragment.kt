@@ -9,13 +9,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.hackaton1_client.R
-import com.example.hackaton1_client.fragments.placeholder.PlaceholderContent
 import com.example.hackaton1_client.network.NetworkQueries
 
 /**
  * A fragment representing a list of Items.
  */
-class CommercialObjectFragment(val building_id: Int) : Fragment() {
+class CommercialObjectsFragment(val building_id: Int) : Fragment() {
 
     private var columnCount = 1
 
@@ -57,8 +56,8 @@ class CommercialObjectFragment(val building_id: Int) : Fragment() {
 
         // TODO: Customize parameter initialization
         @JvmStatic
-        fun newInstance(columnCount: Int) =
-            CommercialObjectFragment().apply {
+        fun newInstance(building_id: Int, columnCount: Int) =
+            CommercialObjectsFragment(building_id).apply {
                 arguments = Bundle().apply {
                     putInt(ARG_COLUMN_COUNT, columnCount)
                 }

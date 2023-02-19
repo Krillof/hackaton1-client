@@ -15,7 +15,7 @@ import com.example.hackaton1_client.network.NetworkQueries
 /**
  * A fragment representing a list of Items.
  */
-class BuildingsFragment : Fragment() {
+class BuildingsFragment(val go_to_com_objects: (Int)->Unit) : Fragment() {
 
     private var columnCount = 1
 
@@ -44,7 +44,7 @@ class BuildingsFragment : Fragment() {
                         columnCount <= 1 -> LinearLayoutManager(context)
                         else -> GridLayoutManager(context, columnCount)
                     }
-                    adapter = BuildingsRecyclerViewAdapter(buildings)
+                    adapter = BuildingsRecyclerViewAdapter(buildings, go_to_com_objects)
                 }
 
             }
@@ -61,8 +61,8 @@ class BuildingsFragment : Fragment() {
 
         // TODO: Customize parameter initialization
         @JvmStatic
-        fun newInstance(columnCount: Int) =
-            BuildingsFragment().apply {
+        fun newInstance(columnCount: Int, go_to_com_objects: (Int) -> Unit) =
+            BuildingsFragment(go_to_com_objects).apply {
                 arguments = Bundle().apply {
                     putInt(ARG_COLUMN_COUNT, columnCount)
                 }

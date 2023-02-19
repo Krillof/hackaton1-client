@@ -1,11 +1,11 @@
 package com.example.hackaton1_client.fragments
 
+import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.hackaton1_client.data.Building
 import com.example.hackaton1_client.databinding.FragmentBuildingBinding
-import com.example.hackaton1_client.network.placeholder.PlaceholderContent.PlaceholderItem
 import com.example.hackaton1_client.network.NetworkQueries
 
 /**
@@ -13,7 +13,8 @@ import com.example.hackaton1_client.network.NetworkQueries
  * TODO: Replace the implementation with code for your data type.
  */
 class BuildingsRecyclerViewAdapter(
-    private val values: List<Building>
+    private val values: List<Building>,
+    private val go_to_com_objects: (building_id: Int)->Unit
 ) : RecyclerView.Adapter<BuildingsRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,12 +29,16 @@ class BuildingsRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-        //"m²"
         with(holder.binding){
             NetworkQueries.setBuildingPicture(item, imageView)
             header.text = item.name_build
             addressHeader.text = item.address
-            square.text = "2000m²" // TODO: change
+            viewExpensesParent.setOnClickListener {
+                go_to_com_objects(item.id)
+            }
+            imageView.setOnClickListener {
+                go_to_com_objects(item.id)
+            }
         }
     }
 

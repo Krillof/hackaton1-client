@@ -5,6 +5,7 @@
     <string name="payment_choice">Оплата счетов</string>
     <string name="profile_choice">Профиль</string>
     <string name="view_commercial_objects">Смотреть объекты</string>
+    <string name="more"> Подробнее </string>
 
     <string name="filler">Текст</string>
 </resources>

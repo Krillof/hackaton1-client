@@ -64,21 +64,6 @@
                 android:layout_marginStart="9dp"
                 android:text="@string/filler"
                 />
-
-            <TextView
-                android:id="@+id/square"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:textColor="@color/comObjectsHeader"
-                android:textSize="12sp"
-                android:fontFamily="@font/days_one_regular_family"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_marginEnd="9dp"
-                android:layout_marginTop="13dp"
-                android:text="@string/filler"
-                />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

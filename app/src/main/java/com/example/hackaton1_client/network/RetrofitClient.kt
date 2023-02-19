@@ -17,8 +17,8 @@ object RetrofitClient {
     private const val BASE_URL = "http://10.2.0.34:8080"
 
     val okHttpClient: OkHttpClient = OkHttpClient.Builder()
-        .readTimeout(60, TimeUnit.SECONDS)
-        .connectTimeout(60, TimeUnit.SECONDS)
+        .readTimeout(500, TimeUnit.SECONDS)
+        .connectTimeout(500, TimeUnit.SECONDS)
         .build()
     private var mRetrofit: Retrofit
             = Retrofit.Builder()

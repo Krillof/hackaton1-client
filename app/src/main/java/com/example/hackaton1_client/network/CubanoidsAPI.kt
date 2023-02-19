@@ -12,7 +12,7 @@ interface CubanoidsAPI {
         @Path("id") id: Int
     ) : Call<List<Building>>
 
-    @GET("/get_commercial_objects/{id}/")
+    @GET("/get_com_objects/{id}/")
     fun getCommercialObjects(
         @Path("id") id: Int
     ): Call<List<CommercialObject>>

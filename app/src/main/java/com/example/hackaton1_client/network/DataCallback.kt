@@ -7,7 +7,7 @@ class DataCallback<T>(val awaiter: (T)->Unit) : Callback<T> {
 
     override fun onResponse(call: Call<T>, response: Response<T>){
         if (response.isSuccessful){
-            Log.println(Log.DEBUG, "Successful response!", response.body()!!.toString())
+            Log.println(Log.DEBUG, "Successful response!", "")
             awaiter(response.body()!!)
         } else {
             Log.println(Log.ERROR, "DataCallback Err", "Response wasn't succesfull: "
